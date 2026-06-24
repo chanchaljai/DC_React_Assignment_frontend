@@ -9,12 +9,12 @@ type ApiErrorResponse = {
 };
 
 const Login = () => {
-  const [formData, setFormData] = useState ({
+  const [formData, setFormData] = useState<Record<string, string>> ({
     email: "",
     password: "",
   });
 
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState<string>("");
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +28,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await api.post("/api/auth/login", formData);
+      const res = await api.post("/auth/login", formData);
 
       console.log(res);
 

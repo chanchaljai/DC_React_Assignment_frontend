@@ -7,8 +7,8 @@ const Home = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-500">
       <div className="bg-white p-8 rounded-xl shadow-lg w-80 text-center">
-        <h1 className="text-2xl font-bold mb-6">
-          Welcome
+        <h1 className="text-2xl font-bold mb-6 text-gray-800">
+          Welcome 
         </h1>
 
         <div className="flex flex-col gap-4">
