@@ -6,6 +6,8 @@ import UserRoute from './routes/UserRoute'
 import AdminRoute from './routes/AdminRoute'
 import UserDashboard from './dashboard/UserDashboard'
 import AdminDashboard from './dashboard/AdminDashboard'
+import Products from './Pages/Products'
+import HeroUI from './Pages/HeroUI'
 
 const App = () => {
   return (
@@ -23,6 +25,8 @@ const App = () => {
           <AdminDashboard />
         </AdminRoute>
       } />
+      <Route path="/hero" element={<HeroUI />} />
+      <Route path="/products" element={<Products />} />
       <Route path="*" element={<Navigate to="/register" replace />} />
     </Routes>
   )
