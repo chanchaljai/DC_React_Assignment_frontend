@@ -1,75 +1,40 @@
-# React + TypeScript + Vite
+Frontend Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Created project using Vite (React + TypeScript + ESLint)
+- Configured TypeScript settings
+- Pushed project to GitHub
 
-Currently, two official plugins are available:
+Setup
+- Installed Tailwind CSS
+- Installed Axios
+- Installed React Router DOM
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Project Structure
+- Created api folder and axios.ts
+- Created .env file
+- Wrapped App with BrowserRouter in main.tsx
 
-## React Compiler
+Pages
+- Register.tsx
+- Login.tsx
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Dashboards
+- UserDashboard.tsx
+- AdminDashboard.tsx
 
-## Expanding the ESLint configuration
+Routes
+- AdminRoute.tsx
+- UserRoute.tsx
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Validation
+- Added React Hook Form
+- Added Zod validation
+- Created authSchema.ts
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+Features
+- User Registration
+- User Login
+- Role-based Authentication
+- Redirect users to respective dashboards
+- Home page navigation for Register/Login
+- Protected routes for Admin and User
