@@ -19,7 +19,7 @@ const Navbar = ({ setIsOpen, setSidebar }: NavbarProps) => {
       </div>
       {/* centre logo */}
       <div className="flex-1 flex justify-center text-2xl text-indigo-600 font-bold">
-        <h1>HomePage</h1>
+        <h1>DigiCroz React Assignment</h1>
       </div>
       {/* right login + Avtar */}
       <div className="flex-1 flex justify-end gap-4">
