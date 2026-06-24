@@ -54,7 +54,7 @@ const HeroUI = () => {
 
         <TabPanel id="contact">
           <h3>Contact</h3>
-          <p>Phone: +91 9988776655</p>
+          <p>Phone: +91 9798229927</p>
           <p>Address: Patna, Bihar</p>
         </TabPanel>
       </Tabs>
