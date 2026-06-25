@@ -1,9 +1,24 @@
 import useProducts from "../hooks/UseProducts";
 import { useNavigate } from "react-router-dom";
 
+interface Product {
+  id: string | number;
+  image: string;
+  title: string;
+  description: string;
+  price: number;
+}
+
+interface UseProductsReturn {
+  data: Product[];
+  isPending: boolean;
+  isError: boolean;
+  error: Error | null;
+}
+
 const Product = () => {
   const navigate = useNavigate();
-  const { data, isPending, isError, error } = useProducts();
+  const { data, isPending, isError, error } = useProducts() as UseProductsReturn;
   if (isPending) {
     return (
       <div className="p-6 text-center text-lg font-semibold">Loading...</div>
@@ -11,7 +26,7 @@ const Product = () => {
   }
   if (isError) {
     return (
-      <div className="p-6 text-center text-red-600">Error: {error.message}</div>
+      <div className="p-6 text-center text-red-600">Error: {error?.message || "Unknown error"}</div>
     );
   }
     const handleBack = () => {

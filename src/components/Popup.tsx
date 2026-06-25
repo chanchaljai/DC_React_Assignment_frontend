@@ -1,6 +1,8 @@
 import { IoMdClose } from "react-icons/io";
-
-const Popup = ({setIsOpen}) => {
+interface PopupProps {
+  setIsOpen: (isOpen: boolean) => void;
+}
+const Popup = ({setIsOpen}: PopupProps) => {
   return (
     <div className="flex justify-center items-center fixed inset-0 bg-black/80">
       <div className="bg-white w-[90%] max-w-sm p-5 rounded-lg shadow-lg">

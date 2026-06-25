@@ -19,6 +19,7 @@ type ApiErrorResponse = {
 
 const Register = () => {
   const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -43,11 +44,15 @@ const Register = () => {
       );
 
       localStorage.setItem("role", res.data.role);
+
       reset();
 
       setTimeout(() => {
-        if (res.data.role === "admin") navigate("/dashboard/admin");
-        else navigate("/dashboard/user");
+        if (res.data.role === "admin") {
+          navigate("/dashboard/admin");
+        } else {
+          navigate("/dashboard/user");
+        }
       }, 1000);
     } catch (error: unknown) {
       console.error(error);
@@ -62,7 +67,9 @@ const Register = () => {
         return;
       }
 
-      setError("root", { message: "Something went wrong" });
+      setError("root", {
+        message: "Something went wrong",
+      });
     }
   };
 
@@ -73,7 +80,9 @@ const Register = () => {
           Create Account
         </h2>
 
-        <p className="text-center text-gray-500 mb-6">Register to continue</p>
+        <p className="text-center text-gray-500 mb-6">
+          Register to continue
+        </p>
 
         {errors.root?.message && (
           <p className="mb-4 rounded-lg bg-red-50 p-3 text-sm text-red-600">
@@ -89,8 +98,11 @@ const Register = () => {
               {...register("name")}
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
+
             {errors.name?.message && (
-              <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+              <p className="mt-1 text-sm text-red-600">
+                {errors.name.message}
+              </p>
             )}
           </div>
 
@@ -101,6 +113,7 @@ const Register = () => {
               {...register("email")}
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
+
             {errors.email?.message && (
               <p className="mt-1 text-sm text-red-600">
                 {errors.email.message}
@@ -115,6 +128,7 @@ const Register = () => {
               {...register("password")}
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
+
             {errors.password?.message && (
               <p className="mt-1 text-sm text-red-600">
                 {errors.password.message}
@@ -130,8 +144,11 @@ const Register = () => {
               <option value="user">User</option>
               <option value="admin">Admin</option>
             </select>
+
             {errors.role?.message && (
-              <p className="mt-1 text-sm text-red-600">{errors.role.message}</p>
+              <p className="mt-1 text-sm text-red-600">
+                {errors.role.message}
+              </p>
             )}
           </div>
 
