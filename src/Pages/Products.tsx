@@ -1,4 +1,3 @@
-import React from "react";
 import useProducts from "../hooks/UseProducts";
 import { useNavigate } from "react-router-dom";
 

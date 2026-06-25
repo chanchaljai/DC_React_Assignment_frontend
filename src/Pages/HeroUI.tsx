@@ -1,4 +1,3 @@
-import React from "react";
 import { Tabs, TabList, Tab, TabPanel } from "@heroui/react";
 import { useNavigate } from "react-router-dom";
 
